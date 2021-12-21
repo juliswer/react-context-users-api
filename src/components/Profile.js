@@ -9,7 +9,11 @@ const Profile = () => {
         <>
             {
                 selectedUser ? (
-                    <div></div>
+                    <div>
+                        <img src={selectedUser.avatar} />
+                        <h1>{`${selectedUser.first_name} ${selectedUser.last_name}`}</h1>
+                        <h3>{`${selectedUser.email}`}</h3>
+                    </div>
                 ) : (
                     <h1>No User Selected</h1>
                 )
