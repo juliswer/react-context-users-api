@@ -14,7 +14,7 @@ const UserList = () => {
             <div className="list-group h-100">
                 {
                     users.map(user => (
-                        <a href="" key={user.id}>{`${user.first_name} ${user.last_name}`}</a>
+                        <a key={user.id}>{`${user.first_name} ${user.last_name}`}</a>
                     ))
                 }
             </div>
