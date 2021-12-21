@@ -1,6 +1,7 @@
 import React, {useReducer} from 'react';
 import UserReducer from './UserReducer';
 import UserContext from './UserContext';
+import axios from 'axios';
 
 const UserState = (props) => {
     const initialState = {
@@ -10,14 +11,22 @@ const UserState = (props) => {
 
     const [state, dispatch] = useReducer(UserReducer, initialState)
     
-    const getUsers = () => {}
+    const getUsers = async () => {
+        const res = await axios.get('https://reqres.in/api/users')
+        console.log(res.data.data)
+    }
     
-    const getProfile = () => {}
+    const getProfile = async (id) => {
+        const res = await axios.get('https://reqres.in/api/users/' + id)
+        console.log(res)
+    }
 
     return (
         <UserContext.Provider value={{
             user: state.user,
             selectedUser: state.selectedUser,
+            getUsers,
+            getProfile
         }}>
             {props.children}
         </UserContext.Provider>

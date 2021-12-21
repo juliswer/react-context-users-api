@@ -4,12 +4,15 @@ import './App.css';
 import Profile from './components/Profile';
 import UserList from './components/UserList';
 
+// Context
+import UserState from './context/User/UserState';
+
 function App() {
   return (
-    <>
+    <UserState>
       <UserList />
       <Profile />
-    </>
+    </UserState>
   );
 }
 
