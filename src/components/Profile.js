@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import UserContext from '../context/User/UserContext';
 
 const Profile = () => {
+
+    const { selectedUser } = useContext(UserContext);
+
     return (
-        <div>
-            Profile
-        </div>
+        <>
+            {
+                selectedUser ? (
+                    <div></div>
+                ) : (
+                    <h1>No User Selected</h1>
+                )
+            }
+        </>
     )
 }
 
