@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const UserState = (props) => {
     const initialState = {
-        user: [],
+        users: [],
         selectedUser: null
     }
 
@@ -26,7 +26,7 @@ const UserState = (props) => {
 
     return (
         <UserContext.Provider value={{
-            user: state.user,
+            users: state.users,
             selectedUser: state.selectedUser,
             getUsers,
             getProfile

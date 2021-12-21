@@ -3,16 +3,21 @@ import UserContext from '../context/User/UserContext';
 
 const UserList = () => {
 
-    const {getUsers, getProfile} = useContext(UserContext)
+    const {users, getUsers} = useContext(UserContext)
 
     useEffect(() => {
         getUsers()
-        getProfile(1)
     }, [])
 
     return (
         <div>
-            User list
+            <div className="list-group h-100">
+                {
+                    users.map(user => (
+                        <a href="" key={user.id}>{`${user.first_name} ${user.last_name}`}</a>
+                    ))
+                }
+            </div>
         </div>
     )
 }

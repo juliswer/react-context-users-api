@@ -1,20 +1,21 @@
-import {GET_USERS, GET_PROFILE} from '../types';
+import { GET_USERS, GET_PROFILE } from "../types";
 
 export default (state, action) => {
-    const {payload, type} = action;
+  const { payload, type } = action;
 
-    switch (type) {
-        case GET_USERS:
-            return {
-                ...state,
-                user: payload
-            }
+  switch (type) {
+    case GET_USERS:
+      return {
+        ...state,
+        user: payload,
+      };
 
-        case GET_PROFILE:
-            return {
-                ...state,
-                selectedUser: payload
-            }
-    }
-
-}
+    case GET_PROFILE:
+      return {
+        ...state,
+        selectedUser: payload,
+      };
+    default:
+      return state;
+  }
+};
